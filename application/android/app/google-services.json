@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "1085122006245",
+    "firebase_url": "https://gatedcommunity-9df5b.firebaseio.com",
+    "project_id": "gatedcommunity-9df5b",
+    "storage_bucket": "gatedcommunity-9df5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085122006245:android:cf65f90b0bdba0d1",
+        "android_client_info": {
+          "package_name": "avengers.infinity.gatedcommunityavengers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085122006245-3ovev1qh1i55brfjh7lt8ddq8gv8pdtd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "avengers.infinity.gatedcommunityavengers",
+            "certificate_hash": "ea85def25a0ab0b046b5240c446e82d3749404fd"
+          }
+        },
+        {
+          "client_id": "1085122006245-j1p1fbi9bg3cimeaaidnmoomdd7lr90o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKUKYkvTVNDQXmco7oxtFh4iuM_0lFZRk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085122006245-j1p1fbi9bg3cimeaaidnmoomdd7lr90o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085122006245:android:4008ecf059b7475e",
+        "android_client_info": {
+          "package_name": "com.example.infinitycommunity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085122006245-ss8veusren5jjb3mcsib73hj15t4ll9o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.infinitycommunity",
+            "certificate_hash": "ea85def25a0ab0b046b5240c446e82d3749404fd"
+          }
+        },
+        {
+          "client_id": "1085122006245-j1p1fbi9bg3cimeaaidnmoomdd7lr90o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKUKYkvTVNDQXmco7oxtFh4iuM_0lFZRk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085122006245-j1p1fbi9bg3cimeaaidnmoomdd7lr90o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
