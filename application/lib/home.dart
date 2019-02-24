@@ -11,6 +11,7 @@ class _HomePageState extends State<HomePage> {
       GlobalKey<RefreshIndicatorState>();
 
   String pageName = "Meetings";
+  int _currentIndex = 0;
 
   List<Widget> _getData(DataSnapshot snapshot) {
     List<Widget> list = List<Widget>();
@@ -66,6 +67,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.people_outline),
@@ -82,7 +84,9 @@ class _HomePageState extends State<HomePage> {
           } else if (index == 1) {
             pageName = "Issues";
           }
-          setState(() {});
+          setState(() {
+            _currentIndex = index;
+          });
         },
       ),
       body: RefreshIndicator(

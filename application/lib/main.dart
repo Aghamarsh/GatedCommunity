@@ -6,18 +6,21 @@ import 'newIssue.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn _googleSignIn = GoogleSignIn();
 
-void main() => runApp(InfinityApp());
+void main() async {
+  runApp(InfinityApp());
+}
 
 class InfinityApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: LoginPage(),
+        home: _handleCurrentScreen(),
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
@@ -28,6 +31,24 @@ class InfinityApp extends StatelessWidget {
           '/newIssue': (BuildContext context) => NewIssue(),
         });
   }
+}
+
+Widget _handleCurrentScreen() {
+  return StreamBuilder<FirebaseUser>(
+    stream: FirebaseAuth.instance.onAuthStateChanged,
+    builder: (BuildContext context, snapshot) {
+      if (snapshot.connectionState == ConnectionState.waiting) {
+        return Center(
+          child: CircularProgressIndicator(),
+        );
+      } else {
+        if (snapshot.hasData) {
+          return HomePage();
+        }
+        return LoginPage();
+      }
+    },
+  );
 }
 
 class LoginPage extends StatefulWidget {
@@ -45,17 +66,17 @@ class _LoginPageState extends State<LoginPage> {
       idToken: googleAuth.idToken,
     );
     final FirebaseUser user = await _auth.signInWithCredential(credential);
-    assert(user.email != null);
-    assert(user.displayName != null);
-    assert(!user.isAnonymous);
-    assert(await user.getIdToken() != null);
 
-    final FirebaseUser currentUser = await _auth.currentUser();
-    if (user.uid == currentUser.uid) {
-      return true;
-    } else {
-      return false;
-    }
+    DatabaseReference userRef =
+        await FirebaseDatabase.instance.reference().child("infinity/users");
+    DataSnapshot snapshot = await userRef.once();
+    int noOfUsers = snapshot.value.values.length;
+
+    userRef
+        .child("${noOfUsers + 1}")
+        .set({"name": "${user.displayName}", "isAccepted": false});
+
+    return true;
   }
 
   @override

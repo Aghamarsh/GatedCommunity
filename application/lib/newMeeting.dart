@@ -60,6 +60,9 @@ class _NewMeetingState extends State<NewMeeting> {
                   keyboardType: TextInputType.text,
                   controller: _timeCon,
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                ),
                 TextFormField(
                   decoration: InputDecoration(
                     labelText: "Venue : ",
