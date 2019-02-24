@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="fire.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="util.css">
+	<title></title>
+</head>
+<body>
+  <br>
+  <br>
+
+<center><h1 id="data">REQUEST INFO </h1></center>
+<br>
+<br>
+
+<div class="table100 ver5 m-b-110">
+    <table data-vertable="ver5" id="tab">
+      <thead>
+        <tr class="row100 head">
+          <th class="column100 column1" data-column="column1">Name</th>
+          <th class="column100 column2" data-column="column2">Block</th>
+          <th class="column100 column3" data-column="column3" colspan="2">Action</th>
+          <th class="column100 column2" data-column="column2">Status</th>
+          
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+
+
+
+ 
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBFSGh_TnTAcAq6zx5QdhJqVwSPdW22vlk",
+    authDomain: "gatedcommunity-9df5b.firebaseapp.com",
+    databaseURL: "https://gatedcommunity-9df5b.firebaseio.com",
+    projectId: "gatedcommunity-9df5b",
+    storageBucket: "gatedcommunity-9df5b.appspot.com",
+    messagingSenderId: "1085122006245"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src=firebase.js></script>
+
+<center><h1>Enter The Number of the row to be Edited</h1>
+<input class="it" type="int" placeholder="Number" id = "Name"></input>
+
+<button class="but" onclick="updat()" >Accept</button>
+<button  class="but" onclick="rejec()">Reject</button>
+</center>
+</body>
+</html>
