@@ -15,49 +15,52 @@ class _NewIssueState extends State<NewIssue> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text("Add Issue"),
+        ),
         body: Container(
-      padding: const EdgeInsets.all(30.0),
-      child: ListView(children: [
-        Form(
-            autovalidate: true,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    labelText: "Problem : ",
-                  ),
-                  keyboardType: TextInputType.text,
-                  controller: _problemCon,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(25.0),
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    labelText: "Issue Tag : ",
-                  ),
-                  keyboardType: TextInputType.text,
-                  controller: _tagCon,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                ),
-                RaisedButton(
-                  onPressed: updateIssue,
-                  color: Colors.blue,
-                  textColor: Colors.white,
-                  child: Text("Add Issue"),
-                ),
-              ],
-            )),
-      ]),
-    ));
+          padding: const EdgeInsets.all(30.0),
+          child: ListView(children: [
+            Form(
+                autovalidate: true,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: "Problem : ",
+                      ),
+                      keyboardType: TextInputType.text,
+                      controller: _problemCon,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(25.0),
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: "Issue Tag : ",
+                      ),
+                      keyboardType: TextInputType.text,
+                      controller: _tagCon,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                    ),
+                    RaisedButton(
+                      onPressed: updateIssue,
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      child: Text("Create Issue"),
+                    ),
+                  ],
+                )),
+          ]),
+        ));
   }
 
   void updateIssue() async {
