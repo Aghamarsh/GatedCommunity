@@ -26,10 +26,17 @@ s=0;
 function generatelist(y)
 {
 for(i=0;i<y;i++){
-
+if(s<=9)
+{
   var x = s.toString();
   retrivedata("0"+x);
-  s++;
+  }
+    else
+{  var x=s.toString();
+
+	retrivedata(x);
+}
+s++;
 }
 }
 function retrivedata(nameofchild){
